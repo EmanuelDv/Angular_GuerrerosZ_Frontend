@@ -1,0 +1,26 @@
+<div class="content-container">
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Listado de Guerreros</h2>
+    </div>
+    <div class="row">
+      <div *ngFor="let guerrero of guerreros" class="col-md-4 mb-3">
+        <div class="card guerrero-card">
+          <div 
+            class="guerrero-image" 
+            [ngStyle]="{'background-image': 'url(' + (guerrero.imagenGuerrero || 'https://via.placeholder.com/736x959') + ')'}">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ guerrero.nombre }}</h5>
+            <p class="card-text">Ki: {{ guerrero.ki }}<br>Año de Aparición: {{ guerrero.anioAparicion }}</p>
+          </div>
+          <div class="card-footer">
+            <a [routerLink]="['/edit', guerrero.id]" class="btn btn-primary">Editar</a>
+            <button class="btn btn-danger" (click)="deleteGuerrero(guerrero.id)">Eliminar</button>
+            <a [routerLink]="['/detail', guerrero.id]" class="btn btn-secondary">Descripción</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

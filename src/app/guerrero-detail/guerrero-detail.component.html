@@ -1,0 +1,13 @@
+<div class="container mt-4 content-container" *ngIf="guerrero">
+    <h2 class="mb-4">{{ guerrero.nombre }}</h2>
+    <div class="card">
+      <div class="card-img-top" [ngStyle]="{'background-image': 'url(' + (guerrero.imagenGuerrero || 'https://via.placeholder.com/736x959') + ')'}"></div>
+      <div class="card-body">
+        <p><strong>Ki:</strong> {{ guerrero.ki }}</p>
+        <p><strong>Año de Aparición:</strong> {{ guerrero.anioAparicion }}</p>
+        <p><strong>Descripción:</strong> {{ guerrero.descripcion }}</p>
+      </div>
+    </div>
+    <button type="button" class="btn btn-secondary mt-3 ms-2" (click)="comeBack()">Regresar</button>
+</div>
+<div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>

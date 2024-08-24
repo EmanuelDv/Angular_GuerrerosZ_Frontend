@@ -1,0 +1,80 @@
+<div class="container mt-4">
+  <h2>{{ title }}</h2>
+  <form (ngSubmit)="save()" #guerreroForm="ngForm">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        id="nombre"
+        type="text"
+        class="form-control"
+        [(ngModel)]="guerrero.nombre"
+        name="nombre"
+        required
+        #nombre="ngModel"
+      />
+      <div *ngIf="nombre.invalid && nombre.touched" class="invalid-feedback">
+        Nombre es obligatorio.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="ki" class="form-label">Ki:</label>
+      <input
+        id="ki"
+        type="text"
+        class="form-control"
+        [(ngModel)]="guerrero.ki"
+        name="ki"
+        required
+        #ki="ngModel"
+      />
+      <div *ngIf="ki.invalid && ki.touched" class="invalid-feedback">
+        Ki es obligatorio.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="anioAparicion" class="form-label">Año de Aparición:</label>
+      <input
+        id="anioAparicion"
+        type="text"
+        class="form-control"
+        [(ngModel)]="guerrero.anioAparicion"
+        name="anioAparicion"
+        required
+        #anioAparicion="ngModel"
+      />
+      <div *ngIf="anioAparicion.invalid && anioAparicion.touched" class="invalid-feedback">
+        Año de Aparición es obligatorio.
+      </div>
+    </div>
+
+    <!-- Campo para la imagen del guerrero -->
+    <div class="mb-3">
+      <label for="imagenGuerrero" class="form-label">Imagen del Guerrero:</label>
+      <input
+        id="imagenGuerrero"
+        type="text"
+        class="form-control"
+        [(ngModel)]="guerrero.imagenGuerrero"
+        name="imagenGuerrero"
+        #imagenGuerrero="ngModel"
+      />
+      <div *ngIf="imagenGuerrero.invalid && imagenGuerrero.touched" class="invalid-feedback">
+        La URL de la imagen es obligatoria.
+      </div>
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción:</label>
+        <textarea
+          id="descripcion"
+          class="form-control"
+          [(ngModel)]="guerrero.descripcion"
+          name="descripcion"
+        ></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="guerreroForm.invalid">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="cancel()">Cancelar</button>
+  </form>
+</div>

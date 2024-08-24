@@ -1,0 +1,53 @@
+.guerrero-card {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-background); /* Cambiado para usar la variable */
+  border-radius: 0.5rem;
+  margin: 0.75rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  overflow: hidden;
+}
+
+.guerrero-image {
+  width: 100%;
+  height: 0;
+  padding-top: 100%; /* Aspect Ratio 1:1 */
+  background-position: center center;
+  background-size: cover; /* Ajusta la imagen para que se vea completa */
+  background-color: var(--image-background);
+}
+
+
+.card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--text-color); /* Cambiado para usar la variable */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0; /* Reducimos el padding */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.5rem; /* Añade un pequeño espacio entre los botones */
+  margin: 0 1rem; /* Añade márgenes laterales para que no sobresalgan */
+}
+
+.card-footer .btn {
+  flex: 1; /* Asegura que los botones ocupen el mismo espacio */
+  margin: 0; /* Evita márgenes adicionales */
+  padding: 0.5rem; /* Ajusta el padding interno de los botones */
+  text-align: center;
+}
+
+.card-footer .btn {
+  flex-basis: 32%; /* Cada botón ocupa aproximadamente un tercio del espacio */
+  margin: 0; /* Sin márgenes adicionales */
+  padding: 0.5rem; /* Ajusta el padding interno */
+  text-align: center;
+}
